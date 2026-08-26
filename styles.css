@@ -19,6 +19,9 @@
 
     --target-red: #D6362B;
     --target-red-dark: #8E1F17;
+
+    --stagecut-magenta: #C6379B;
+    --stagecut-blue: #35B8E0;
 }
 
 body {
@@ -40,7 +43,7 @@ body {
 }
 
 .navbar-brand img {
-    height: 32px;
+    height: 30px;
     width: auto;
 }
 
@@ -95,6 +98,14 @@ body {
     width: 120px;
     height: auto;
     margin-bottom: 24px;
+}
+
+.hero-logo-video {
+    width: 320px;
+    max-width: 80%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 12px;
 }
 
 .hero h1 {
@@ -252,6 +263,25 @@ body {
 
 .app-card--target .app-card-features li::before {
     background: var(--target-red);
+}
+
+.app-card--stagecut .app-card-features li::before {
+    background: var(--stagecut-magenta);
+}
+
+.app-card-subtitle {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--gray-60);
+    margin-top: 2px;
+}
+
+.app-card-banner {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    display: block;
 }
 
 /* ===================== ABOUT / VALUES ===================== */
