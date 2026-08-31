@@ -22,6 +22,8 @@
 
     --stagecut-magenta: #C6379B;
     --stagecut-blue: #35B8E0;
+
+    --chordseek-amber: #E0932A;
 }
 
 body {
@@ -267,6 +269,10 @@ body {
 
 .app-card--stagecut .app-card-features li::before {
     background: var(--stagecut-magenta);
+}
+
+.app-card--chordseek .app-card-features li::before {
+    background: var(--chordseek-amber);
 }
 
 .app-card-subtitle {
