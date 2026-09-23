@@ -24,6 +24,9 @@
     --stagecut-blue: #35B8E0;
 
     --chordseek-amber: #E0932A;
+
+    --scaleseek-copper: #D47727;
+    --scaleseek-teal: #22C9B4;
 }
 
 body {
@@ -273,6 +276,14 @@ body {
 
 .app-card--chordseek .app-card-features li::before {
     background: var(--chordseek-amber);
+}
+
+.app-card--scaleseek-guitar .app-card-features li::before {
+    background: var(--scaleseek-copper);
+}
+
+.app-card--scaleseek-mandolin .app-card-features li::before {
+    background: var(--scaleseek-teal);
 }
 
 .app-card-subtitle {
