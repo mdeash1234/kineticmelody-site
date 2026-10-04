@@ -27,6 +27,7 @@
 
     --scaleseek-copper: #D47727;
     --scaleseek-teal: #22C9B4;
+    --scaleseek-violet: #B66CF0;
 }
 
 body {
@@ -280,6 +281,10 @@ body {
 
 .app-card--scaleseek-guitar .app-card-features li::before {
     background: var(--scaleseek-copper);
+}
+
+.app-card--scaleseek-bass .app-card-features li::before {
+    background: var(--scaleseek-violet);
 }
 
 .app-card--scaleseek-mandolin .app-card-features li::before {
