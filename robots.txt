@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kineticmelody.org/sitemap.xml
