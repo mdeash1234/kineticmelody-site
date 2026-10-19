@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Circle of Fifths &mdash; Interactive, With Sound | Kinetic Melody</title>
-<meta name="description" content="Free interactive circle of fifths. Tap any key to hear it, see its key signature and relative minor, and find the six chords that belong together. Build a progression and play it back.">
+<title>Circle of Fifths &mdash; Interactive | Kinetic Melody</title>
+<meta name="description" content="Free interactive circle of fifths. Tap any key to see its key signature and relative minor, and find the six chords that belong together, with Roman numerals.">
 <link rel="canonical" href="https://kineticmelody.org/circle-of-fifths/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Circle of Fifths &mdash; Free Interactive Tool">
-<meta property="og:description" content="Hear every key and see which chords belong together.">
+<meta property="og:description" content="See every key and which chords belong together.">
 <meta property="og:url" content="https://kineticmelody.org/circle-of-fifths/">
 <meta property="og:image" content="https://kineticmelody.org/resources/chordseek_banner.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="icon" type="image/png" href="../resources/favicon.png">
 <link rel="stylesheet" href="../styles.css?v=6">
-<link rel="stylesheet" href="../shared/tools.css?v=1">
+<link rel="stylesheet" href="../shared/tools.css?v=2">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Circle of Fifths", "url": "https://kineticmelody.org/circle-of-fifths/", "applicationCategory": "MusicApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@type": "Organization", "name": "Kinetic Melody", "url": "https://kineticmelody.org"}}</script>
 </head>
 <body>
@@ -45,14 +45,14 @@
   <header class="tool-head">
     <h1>Circle of Fifths</h1>
     <p class="lead">
-      Hear every key and see which chords belong together. Tap a key to play it, then add chords to
-      build a progression &mdash; once you add one, the circle keeps you in that key. Free, no sign-up.
+      See every key and which chords belong together. Tap a key to see its key signature, its
+      relative major or minor, and the six chords that go with it. Free, no sign-up.
     </p>
   </header>
 
   <div class="cof-layout">
     <div>
-      <p class="cof-hint">TAP A KEY TO HEAR IT</p>
+      <p class="cof-hint">TAP A KEY TO SEE ITS CHORDS</p>
       <svg id="wheel" class="cof-svg" viewBox="0 0 400 400" role="group" aria-label="Circle of fifths"></svg>
     </div>
 
@@ -61,15 +61,12 @@
       <p class="sig" id="sig"></p>
       <div class="tool-label" id="sixLabel" style="margin-top:0">CHORDS IN C</div>
       <div class="cof-six" id="six"></div>
-      <button type="button" class="tool-btn" id="addBtn">+ Add</button>
-      <p class="tool-note" id="note" aria-live="polite"></p>
-      <div class="prog" id="prog"></div>
     </div>
   </div>
 
   <div class="app-promo">
-    <p><strong>Take it with you.</strong> The same circle of fifths, plus every chord shape for the
-      chords you pick, is built into ChordSeek on Android.</p>
+    <p><strong>Take it with you.</strong> The same circle of fifths, with sound and a progression
+      builder, plus every chord shape for the chords you pick, is built into ChordSeek on Android.</p>
     <a class="btn btn-brand" href="https://play.google.com/store/apps/details?id=com.kineticmelody.chordseek" target="_blank" rel="noopener">Get ChordSeek on Google Play</a>
   </div>
 
@@ -85,8 +82,7 @@
     <p>
       Pick any key and the keys on either side of it give you its other two main chords. In C, that is
       F and G, the IV and V, with the relative minors Dm, Am and Em beneath. Those six chords cover
-      most of popular music, which is why the tool locks you to them once you start a progression. Read
-      the same six chords from the minor ring and their Roman numerals change, which is the difference
+      most of popular music. Read the same six chords from the minor ring and their Roman numerals change, which is the difference
       between A minor and C major.
     </p>
   </section>
@@ -102,7 +98,7 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
-<script src="../shared/theory.js?v=1"></script>
-<script src="page.js?v=2"></script>
+<script src="../shared/theory.js?v=2"></script>
+<script src="page.js?v=3"></script>
 </body>
 </html>

@@ -5,11 +5,9 @@
   var CX = 200, CY = 200;
   var R_OUT = 190, R_MID = 122, R_IN = 68;
 
-  var state = { sel: K.positionAt(0, "major"), anchor: null, anchorRing: null };
+  var state = { sel: K.positionAt(0, "major") };
   var wheel = document.getElementById("wheel");
-  var noteEl = document.getElementById("note");
-  var prog = new K.Progression(document.getElementById("prog"), { onChange: onProgChange });
-  var wedges = {};
+      var wedges = {};
 
   function pt(r, deg) {
     var a = (deg - 90) * Math.PI / 180;
@@ -57,39 +55,18 @@
   }
 
   function tap(index, ring) {
-    if (!K.isInCluster(index, state.anchor)) {
-      noteEl.textContent = "Staying in " + homeName() + ". Clear to change key.";
-      return;
-    }
-    noteEl.textContent = "";
     state.sel = K.positionAt(index, ring);
-    K.playChord(state.sel.rootPc, state.sel.quality);
     render();
   }
 
-  function homePos() { return K.home(state.anchor, state.anchorRing, state.sel); }
-
-  function homeName() {
-    var h = homePos();
-    return h.base + (h.ring === "major" ? " major" : " minor");
-  }
-
-  function numeralFor(pos) {
-    var n = K.circleNumeral(pos.index, pos.ring, homePos());
-    return n;
-  }
-
   function render() {
-    var home = homePos();
+    var home = state.sel;
     for (var i = 0; i < 12; i++) {
       ["major", "minor"].forEach(function (ring) {
         var w = wedges[ring + i];
-        var inCluster = K.isInCluster(i, state.anchor);
         var isSel = state.sel.index === i && state.sel.ring === ring;
         var num = K.circleNumeral(i, ring, home);
-        w.g.setAttribute("class", "cof-wedge " + ring + (isSel ? " sel" : "") +
-          (num ? " in" : "") + (!inCluster ? " dim" : ""));
-        w.g.setAttribute("aria-disabled", inCluster ? "false" : "true");
+        w.g.setAttribute("class", "cof-wedge " + ring + (isSel ? " sel" : "") + (num ? " in" : ""));
         w.rn.textContent = num || "";
       });
     }
@@ -103,10 +80,10 @@
                                  : "Relative major: " + spoke.name;
     document.getElementById("sig").textContent = "Key signature: " + K.keySignature(spoke.sharps) + " · " + rel;
 
-    document.getElementById("sixLabel").textContent = "CHORDS IN " + home.base.toUpperCase() + (home.ring === "minor" ? " MINOR" : "");
+    document.getElementById("sixLabel").textContent = "CHORDS IN " + s.base.toUpperCase() + (s.ring === "minor" ? " MINOR" : "");
     var six = document.getElementById("six");
     six.innerHTML = "";
-    K.cluster(home.index).forEach(function (idx) {
+    K.cluster(s.index).forEach(function (idx) {
       ["major", "minor"].forEach(function (ring) {
         var p = K.positionAt(idx, ring);
         var b = document.createElement("button");
@@ -118,30 +95,7 @@
         six.appendChild(b);
       });
     });
-    updateAdd();
   }
-
-  function updateAdd() {
-    var b = document.getElementById("addBtn");
-    b.disabled = !prog.canAdd();
-    b.textContent = prog.canAdd() ? "+ Add" : "Full";
-  }
-
-  function onProgChange(p) {
-    if (!p.items.length) { state.anchor = null; state.anchorRing = null; noteEl.textContent = ""; }
-    render();
-  }
-
-  document.getElementById("addBtn").addEventListener("click", function () {
-    var s = state.sel;
-    if (state.anchor === null) { state.anchor = s.index; state.anchorRing = s.ring; }
-    var h = K.home(state.anchor, state.anchorRing, s);
-    prog.add({
-      name: s.name, rootPc: s.rootPc, quality: s.quality,
-      numeral: K.circleNumeral(s.index, s.ring, h) || ""
-    });
-    render();
-  });
 
   buildWheel();
   render();
