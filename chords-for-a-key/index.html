@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chords in a Key &mdash; Diatonic Chords for Every Key and Mode | Kinetic Melody</title>
+<meta name="description" content="Free chords-for-a-key tool. See the seven diatonic chords of any of the 12 keys with Roman numerals, as triads or seventh chords, and hear each one. Includes Ionian and Dorian.">
+<link rel="canonical" href="https://kineticmelody.org/chords-for-a-key/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Chords in a Key &mdash; Free Diatonic Chord Finder">
+<meta property="og:description" content="The seven chords of any key, with Roman numerals. Triads or 7ths. Tap to hear them.">
+<meta property="og:url" content="https://kineticmelody.org/chords-for-a-key/">
+<meta property="og:image" content="https://kineticmelody.org/resources/chordseek_banner.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="icon" type="image/png" href="../resources/favicon.png">
+<link rel="stylesheet" href="../styles.css?v=6">
+<link rel="stylesheet" href="../shared/tools.css?v=1">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Chords in a Key", "url": "https://kineticmelody.org/chords-for-a-key/", "applicationCategory": "MusicApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@type": "Organization", "name": "Kinetic Melody", "url": "https://kineticmelody.org"}}</script>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="/">
+      <img src="../resources/logo_mark.png" alt="Kinetic Melody"> Kinetic Melody
+    </a>
+    <div class="navbar-nav ms-auto">
+      <a class="nav-link" href="/#apps">Apps</a>
+      <div class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Online Tools</a>
+        <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end">
+          <li><a class="dropdown-item" href="/mandolin-chords/">Mandolin Chord Finder</a></li>
+          <li><a class="dropdown-item active" href="/chords-for-a-key/">Chords for a Key</a></li>
+          <li><a class="dropdown-item" href="/circle-of-fifths/">Circle of Fifths</a></li>
+        </ul>
+      </div>
+      <a class="nav-link" href="/privacy.html">Privacy</a>
+    </div>
+  </div>
+</nav>
+
+<main class="container tool-wrap">
+
+  <header class="tool-head">
+    <h1>Chords for a Key</h1>
+    <p class="lead">
+      Pick a key and a mode to see the seven chords that belong to it, with their Roman numerals.
+      Switch between triads and seventh chords, and tap any chord to hear it. Free, no sign-up.
+    </p>
+  </header>
+
+  <div class="tool-label">KEY</div>
+  <div class="chips" id="keys" role="group" aria-label="Key"></div>
+
+  <div class="tool-label">MODE</div>
+  <div class="chips" id="modes" role="group" aria-label="Mode"></div>
+  <p class="mode-desc" id="modeDesc"></p>
+  <p class="tool-note" id="note" aria-live="polite"></p>
+
+  <div class="key-head">
+    <h2 id="heading">CHORDS IN C IONIAN</h2>
+    <div class="seg" role="group" aria-label="Triads or sevenths">
+      <button type="button" id="triads" class="on">TRIADS</button>
+      <button type="button" id="sevenths">7THS</button>
+    </div>
+  </div>
+
+  <div class="key-chords" id="chords"></div>
+
+  <div class="kc-actions">
+    <span class="kc-selected" id="selected">Tap a chord to hear it.</span>
+    <button type="button" class="tool-btn ghost" id="replay" disabled>&#9654; Play again</button>
+    <button type="button" class="tool-btn" id="addBtn" disabled>+ Add</button>
+  </div>
+
+  <div class="prog" id="prog"></div>
+
+  <div class="app-promo">
+    <p><strong>Want every mode, every chord type, and the guitar chord shapes to go with them?</strong>
+      ChordSeek shows you every playable shape for any chord, with finger numbers and playback, on your phone.</p>
+    <a class="btn btn-brand" href="https://play.google.com/store/apps/details?id=com.kineticmelody.chordseek" target="_blank" rel="noopener">Get ChordSeek on Google Play</a>
+  </div>
+
+  <section class="tool-about">
+    <h2>How the chords of a key are built</h2>
+    <p>
+      Every key is built from a seven-note scale. Stack thirds on each note of the scale, using only
+      notes from that same scale, and you get seven chords: three major, three minor and one
+      diminished in a major key. The Roman numerals tell you each chord's place in the key, with
+      capitals for major chords and lower case for minor ones. In C major the chords are
+      C, Dm, Em, F, G, Am and Bdim: I, ii, iii, IV, V, vi and vii&deg;.
+    </p>
+    <h2>What the modes change</h2>
+    <p>
+      A mode starts the same seven notes from a different degree, which changes which chord is home.
+      Dorian is the minor sound with a raised 6th, so the chord on the fourth degree is major
+      rather than minor. Chords are spelled from the key's own letters, so you will see
+      E&flat; rather than D&sharp; in a flat key.
+    </p>
+  </section>
+
+</main>
+
+<footer class="text-center py-5">
+  <div class="container">
+    <img src="../resources/logo.png" alt="Kinetic Melody" class="footer-wordmark">
+    <p class="mb-2"><a href="/#apps">Apps</a> &middot; <a href="/privacy.html">Privacy Policy</a> &middot; <a href="mailto:info@kineticmelody.org">Contact</a></p>
+    <p class="mb-0">&copy; 2026 Kinetic Melody</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../shared/theory.js?v=1"></script>
+<script src="page.js?v=1"></script>
+</body>
+</html>

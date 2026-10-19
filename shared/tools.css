@@ -1,0 +1,123 @@
+/* Shared styles for the Online Tools pages (circle of fifths, chords for a key).
+   Palette comes from ../styles.css; the accent is the amber from the ChordSeek app. */
+
+.tool-wrap { max-width: 1100px; padding-bottom: 4rem; }
+.tool-head { padding: 2.5rem 0 1.25rem; }
+.tool-head h1 { font-weight: 700; letter-spacing: -0.02em; }
+.tool-head .lead { max-width: 62ch; color: var(--gray-40); }
+
+.tool-label {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em;
+    color: var(--gray-60); margin: 1.1rem 0 0.4rem;
+}
+
+.chips { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+.chip {
+    border: 1px solid var(--gray-80); background: #fff; color: var(--gray-20);
+    border-radius: 999px; padding: 0.22rem 0.75rem; font-size: 0.9rem; line-height: 1.45; cursor: pointer;
+}
+.chip:hover { border-color: var(--gray-50); }
+.chip.on { background: var(--chordseek-amber); border-color: var(--chordseek-amber); color: #2B1700; font-weight: 600; }
+.chip.locked { color: var(--gray-60); background: var(--gray-95); }
+.chip.locked::after { content: " \1F512"; font-size: 0.75em; }
+
+.tool-btn {
+    border: 1px solid var(--chordseek-amber); background: var(--chordseek-amber); color: #2B1700;
+    font-weight: 600; font-size: 0.9rem; border-radius: 999px; padding: 0.3rem 1rem; cursor: pointer;
+}
+.tool-btn:hover:not(:disabled) { filter: brightness(1.06); }
+.tool-btn.ghost { background: #fff; color: var(--gray-20); border-color: var(--gray-80); }
+.tool-btn:disabled { opacity: 0.45; cursor: default; }
+
+.tool-note { margin: 0.6rem 0 0; font-size: 0.9rem; color: var(--gray-40); min-height: 1.3em; }
+.tool-note a { color: var(--purple-deep); font-weight: 600; }
+
+/* ---------- progression strip ---------- */
+
+.prog { background: #fff; border: 1px solid var(--gray-90); border-radius: 13px; padding: 0.8rem 0.9rem; margin-top: 1.4rem; }
+.prog-head { display: flex; align-items: center; justify-content: space-between; gap: 0.6rem; flex-wrap: wrap; }
+.prog-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; color: var(--gray-60); }
+.prog-btns { display: inline-flex; gap: 0.4rem; }
+.prog-strip { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.6rem; min-height: 2.4rem; align-items: center; }
+.prog-empty { margin: 0; font-size: 0.86rem; color: var(--gray-60); }
+.prog-chip {
+    display: inline-flex; flex-direction: column; align-items: center; position: relative;
+    border: 1px solid var(--gray-80); border-radius: 10px; padding: 0.25rem 1.5rem 0.25rem 0.7rem; background: var(--gray-95);
+    transition: background 0.1s, border-color 0.1s;
+}
+.prog-chip.now { background: var(--chordseek-amber); border-color: var(--chordseek-amber); }
+.prog-num { font-size: 0.7rem; color: var(--gray-60); min-height: 1em; }
+.prog-chip.now .prog-num { color: #2B1700; }
+.prog-name { font-weight: 700; font-size: 1.05rem; }
+.prog-x { position: absolute; top: 2px; right: 4px; border: 0; background: none; color: var(--gray-60); font-size: 1rem; line-height: 1; cursor: pointer; }
+.prog-x:hover { color: var(--target-red); }
+
+.app-promo { margin-top: 2.2rem; padding: 1.1rem 1.2rem; background: #fff; border: 1px solid var(--gray-90); border-radius: 13px; }
+.app-promo p { margin: 0 0 0.6rem; color: var(--gray-40); }
+
+.tool-about { margin-top: 2.4rem; max-width: 70ch; }
+.tool-about h2 { font-size: 1.25rem; font-weight: 700; margin-top: 1.6rem; }
+.tool-about p { color: var(--gray-40); line-height: 1.7; }
+
+/* ---------- chords for a key ---------- */
+
+.mode-desc { margin: 0.55rem 0 0; font-size: 0.92rem; color: var(--gray-40); }
+.key-head { display: flex; align-items: center; justify-content: space-between; gap: 0.8rem; flex-wrap: wrap; margin-top: 1.5rem; }
+.key-head h2 { margin: 0; font-size: 0.95rem; letter-spacing: 0.1em; font-weight: 700; color: var(--gray-50); }
+.seg { display: inline-flex; border: 1px solid var(--gray-80); border-radius: 999px; overflow: hidden; background: #fff; }
+.seg button { border: 0; background: none; padding: 0.25rem 0.9rem; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.06em; color: var(--gray-40); cursor: pointer; }
+.seg button.on { background: var(--chordseek-amber); color: #2B1700; }
+
+.key-chords { display: grid; grid-template-columns: repeat(7, 1fr); gap: 0.55rem; margin-top: 0.8rem; direction: ltr; }
+.kc {
+    position: relative; background: #fff; border: 1px solid var(--gray-90); border-radius: 13px;
+    padding: 0.7rem 0.2rem 0.65rem; text-align: center; cursor: pointer; font: inherit; color: inherit;
+}
+.kc:hover { border-color: var(--gray-50); }
+.kc.sel { border-color: var(--chordseek-amber); box-shadow: 0 0 0 2px rgba(224, 147, 42, 0.35); }
+.kc .num { display: block; font-size: 0.8rem; color: var(--gray-60); min-height: 1.1em; }
+.kc .nm { display: block; font-size: 1.25rem; font-weight: 700; letter-spacing: -0.01em; word-break: keep-all; }
+.kc.tonic .num { color: #8a5200; font-weight: 700; }
+.kc.locked { background: var(--gray-95); color: var(--gray-60); }
+.kc.locked .nm::after { content: " \1F512"; font-size: 0.6em; }
+.kc-actions { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.9rem; }
+.kc-selected { font-weight: 600; margin-right: 0.3rem; }
+
+@media (max-width: 720px) {
+    .key-chords { grid-template-columns: repeat(4, 1fr); }
+}
+@media (max-width: 420px) {
+    .key-chords { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ---------- circle of fifths ---------- */
+
+.cof-layout { display: grid; grid-template-columns: minmax(0, 520px) minmax(0, 1fr); gap: 1.6rem; align-items: start; margin-top: 1rem; }
+.cof-hint { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; color: var(--gray-60); margin: 0 0 0.3rem; text-align: center; }
+.cof-svg { width: 100%; height: auto; display: block; user-select: none; -webkit-user-select: none; }
+.cof-wedge { cursor: pointer; outline: none; }
+.cof-wedge path { fill: #fff; stroke: var(--gray-80); stroke-width: 1; transition: fill 0.1s; }
+.cof-wedge.minor path { fill: var(--gray-95); }
+.cof-wedge:hover path { fill: #FCEBD2; }
+.cof-wedge:focus-visible path { stroke: var(--purple-deep); stroke-width: 3; }
+.cof-wedge.in path { fill: #FCEBD2; }
+.cof-wedge.sel path { fill: var(--chordseek-amber); stroke: #8a5200; }
+.cof-wedge.dim { opacity: 0.35; cursor: not-allowed; }
+.cof-wedge text { text-anchor: middle; pointer-events: none; fill: var(--gray-10); }
+.cof-wedge .nm { font-weight: 700; }
+.cof-wedge .rn { font-size: 10px; fill: var(--gray-50); }
+.cof-wedge.sel text, .cof-wedge.sel .rn { fill: #2B1700; }
+.cof-center-name { font-size: 26px; font-weight: 700; text-anchor: middle; fill: var(--gray-10); }
+.cof-center-sub { font-size: 11.5px; text-anchor: middle; fill: var(--gray-50); }
+
+.cof-panel h2 { font-size: 1.15rem; font-weight: 700; margin: 0; }
+.cof-panel .sig { color: var(--gray-50); font-size: 0.92rem; margin: 0.15rem 0 0.6rem; }
+.cof-six { display: flex; flex-wrap: wrap; gap: 0.4rem; margin: 0.5rem 0 0.9rem; }
+.cof-six button { border: 1px solid var(--gray-80); background: #fff; border-radius: 10px; padding: 0.25rem 0.7rem; cursor: pointer; text-align: center; font: inherit; }
+.cof-six button:hover { border-color: var(--gray-50); }
+.cof-six .rn { display: block; font-size: 0.7rem; color: var(--gray-60); }
+.cof-six .cn { font-weight: 700; }
+
+@media (max-width: 860px) {
+    .cof-layout { grid-template-columns: 1fr; }
+}

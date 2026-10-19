@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Circle of Fifths &mdash; Interactive, With Sound | Kinetic Melody</title>
+<meta name="description" content="Free interactive circle of fifths. Tap any key to hear it, see its key signature and relative minor, and find the six chords that belong together. Build a progression and play it back.">
+<link rel="canonical" href="https://kineticmelody.org/circle-of-fifths/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Circle of Fifths &mdash; Free Interactive Tool">
+<meta property="og:description" content="Hear every key and see which chords belong together.">
+<meta property="og:url" content="https://kineticmelody.org/circle-of-fifths/">
+<meta property="og:image" content="https://kineticmelody.org/resources/chordseek_banner.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="icon" type="image/png" href="../resources/favicon.png">
+<link rel="stylesheet" href="../styles.css?v=6">
+<link rel="stylesheet" href="../shared/tools.css?v=1">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Circle of Fifths", "url": "https://kineticmelody.org/circle-of-fifths/", "applicationCategory": "MusicApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@type": "Organization", "name": "Kinetic Melody", "url": "https://kineticmelody.org"}}</script>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="/">
+      <img src="../resources/logo_mark.png" alt="Kinetic Melody"> Kinetic Melody
+    </a>
+    <div class="navbar-nav ms-auto">
+      <a class="nav-link" href="/#apps">Apps</a>
+      <div class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Online Tools</a>
+        <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end">
+          <li><a class="dropdown-item" href="/mandolin-chords/">Mandolin Chord Finder</a></li>
+          <li><a class="dropdown-item" href="/chords-for-a-key/">Chords for a Key</a></li>
+          <li><a class="dropdown-item active" href="/circle-of-fifths/">Circle of Fifths</a></li>
+        </ul>
+      </div>
+      <a class="nav-link" href="/privacy.html">Privacy</a>
+    </div>
+  </div>
+</nav>
+
+<main class="container tool-wrap">
+
+  <header class="tool-head">
+    <h1>Circle of Fifths</h1>
+    <p class="lead">
+      Hear every key and see which chords belong together. Tap a key to play it, then add chords to
+      build a progression &mdash; once you add one, the circle keeps you in that key. Free, no sign-up.
+    </p>
+  </header>
+
+  <div class="cof-layout">
+    <div>
+      <p class="cof-hint">TAP A KEY TO HEAR IT</p>
+      <svg id="wheel" class="cof-svg" viewBox="0 0 400 400" role="group" aria-label="Circle of fifths"></svg>
+    </div>
+
+    <div class="cof-panel">
+      <h2 id="title">C major</h2>
+      <p class="sig" id="sig"></p>
+      <div class="tool-label" id="sixLabel" style="margin-top:0">CHORDS IN C</div>
+      <div class="cof-six" id="six"></div>
+      <button type="button" class="tool-btn" id="addBtn">+ Add</button>
+      <p class="tool-note" id="note" aria-live="polite"></p>
+      <div class="prog" id="prog"></div>
+    </div>
+  </div>
+
+  <div class="app-promo">
+    <p><strong>Take it with you.</strong> The same circle of fifths, plus every chord shape for the
+      chords you pick, is built into ChordSeek on Android.</p>
+    <a class="btn btn-brand" href="https://play.google.com/store/apps/details?id=com.kineticmelody.chordseek" target="_blank" rel="noopener">Get ChordSeek on Google Play</a>
+  </div>
+
+  <section class="tool-about">
+    <h2>What the circle of fifths shows</h2>
+    <p>
+      The twelve major keys are arranged clockwise in steps of a fifth, starting with C at the top.
+      Each step to the right adds one sharp to the key signature; each step to the left adds one flat.
+      The inner ring holds each key's relative minor, the minor key that shares the same notes. C major
+      and A minor sit together because neither has any sharps or flats.
+    </p>
+    <h2>The six chords that belong together</h2>
+    <p>
+      Pick any key and the keys on either side of it give you its other two main chords. In C, that is
+      F and G, the IV and V, with the relative minors Dm, Am and Em beneath. Those six chords cover
+      most of popular music, which is why the tool locks you to them once you start a progression. Read
+      the same six chords from the minor ring and their Roman numerals change, which is the difference
+      between A minor and C major.
+    </p>
+  </section>
+
+</main>
+
+<footer class="text-center py-5">
+  <div class="container">
+    <img src="../resources/logo.png" alt="Kinetic Melody" class="footer-wordmark">
+    <p class="mb-2"><a href="/#apps">Apps</a> &middot; <a href="/privacy.html">Privacy Policy</a> &middot; <a href="mailto:info@kineticmelody.org">Contact</a></p>
+    <p class="mb-0">&copy; 2026 Kinetic Melody</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../shared/theory.js?v=1"></script>
+<script src="page.js?v=2"></script>
+</body>
+</html>

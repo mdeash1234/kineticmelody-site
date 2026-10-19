@@ -12,6 +12,18 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://kineticmelody.org/chords-for-a-key/</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kineticmelody.org/circle-of-fifths/</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://kineticmelody.org/privacy.html</loc>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>

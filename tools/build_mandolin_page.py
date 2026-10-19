@@ -249,7 +249,7 @@ def main():
 <meta name="twitter:card" content="summary_large_image">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="icon" type="image/png" href="../resources/favicon.png">
-<link rel="stylesheet" href="../styles.css?v=5">
+<link rel="stylesheet" href="../styles.css?v=6">
 <link rel="stylesheet" href="chords.css?v=1">
 <script type="application/ld+json">%(appld)s</script>
 <script type="application/ld+json">%(faqld)s</script>
@@ -263,7 +263,14 @@ def main():
     </a>
     <div class="navbar-nav ms-auto">
       <a class="nav-link" href="/#apps">Apps</a>
-      <a class="nav-link active" href="/mandolin-chords/">Mandolin Chords</a>
+      <div class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Online Tools</a>
+        <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end">
+          <li><a class="dropdown-item active" href="/mandolin-chords/">Mandolin Chord Finder</a></li>
+          <li><a class="dropdown-item" href="/chords-for-a-key/">Chords for a Key</a></li>
+          <li><a class="dropdown-item" href="/circle-of-fifths/">Circle of Fifths</a></li>
+        </ul>
+      </div>
       <a class="nav-link" href="/privacy.html">Privacy</a>
     </div>
   </div>
@@ -336,6 +343,7 @@ def main():
 </footer>
 
 <script id="chord-data" type="application/json">%(json)s</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 <script src="chords.js?v=1"></script>
 </body>
 </html>

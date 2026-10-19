@@ -408,3 +408,24 @@ footer .footer-wordmark {
         flex-wrap: wrap;
     }
 }
+
+/* ===================== NAV DROPDOWN ===================== */
+.navbar .dropdown-menu {
+    background: var(--gray-10);
+    border: 1px solid var(--gray-20);
+    border-radius: 12px;
+    padding: 6px;
+}
+
+.navbar .dropdown-item {
+    color: var(--gray-90);
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+.navbar .dropdown-item:hover,
+.navbar .dropdown-item:focus,
+.navbar .dropdown-item.active {
+    background: var(--purple-deep);
+    color: white;
+}
