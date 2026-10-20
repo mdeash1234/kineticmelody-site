@@ -1,5 +1,23 @@
-/* Mandolin chord finder. Inherits the palette from ../styles.css and uses the
-   mandolin app's own accent so the page reads as part of that product. */
+/* Chord finder pages. Inherit the palette from ../styles.css. The default accent is
+   the mandolin app's teal; .theme-amber re-themes the page for the guitar app. */
+
+.cf-page {
+    --cf-accent: var(--chordseek-mando-teal);
+    --cf-glow: rgba(47, 214, 190, 0.25);
+    --cf-on: #06302B;
+    --cf-link: #12796C;
+    --cf-ring: #0E7A6C;
+    --cf-tint: #E6FBF7;
+}
+
+.cf-page.theme-amber {
+    --cf-accent: var(--chordseek-amber);
+    --cf-glow: rgba(224, 147, 42, 0.25);
+    --cf-on: #2B1700;
+    --cf-link: #8A5200;
+    --cf-ring: #8A5200;
+    --cf-tint: #FCEBD2;
+}
 
 .cf-wrap {
     max-width: 1100px;
@@ -43,8 +61,8 @@
 
 .cf-search input:focus {
     outline: none;
-    border-color: var(--chordseek-mando-teal);
-    box-shadow: 0 0 0 3px rgba(47, 214, 190, 0.25);
+    border-color: var(--cf-accent);
+    box-shadow: 0 0 0 3px var(--cf-glow);
 }
 
 .chips {
@@ -70,9 +88,9 @@
 }
 
 .chip.on {
-    background: var(--chordseek-mando-teal);
-    border-color: var(--chordseek-mando-teal);
-    color: #06302B;
+    background: var(--cf-accent);
+    border-color: var(--cf-accent);
+    color: var(--cf-on);
     font-weight: 600;
 }
 
@@ -143,7 +161,7 @@
 .more {
     background: none;
     border: none;
-    color: #12796C;
+    color: var(--cf-link);
     font-size: 0.78rem;
     cursor: pointer;
     padding: 0.1rem 0.3rem;
@@ -205,8 +223,8 @@
 
 /* The root is the note the chord is named after; players look for it first. */
 .dia .dot.root {
-    fill: var(--chordseek-mando-teal);
-    stroke: #0E7A6C;
+    fill: var(--cf-accent);
+    stroke: var(--cf-ring);
     stroke-width: 1.2;
 }
 
@@ -230,7 +248,7 @@
 
 .dia .dot.root + .fing,
 .dia .fing.on-root {
-    fill: #06302B;
+    fill: var(--cf-on);
 }
 
 .dia .mark {
@@ -267,7 +285,7 @@
     align-items: flex-start;
     margin: 3rem 0 2rem;
     padding: 1.6rem;
-    background: linear-gradient(135deg, var(--purple-tint-90), #E6FBF7);
+    background: linear-gradient(135deg, var(--purple-tint-90), var(--cf-tint));
     border-radius: 16px;
 }
 

@@ -1,7 +1,7 @@
-/* Mandolin chord finder: filtering, and the alternative voicings.
+/* Chord finder (guitar and mandolin): filtering, and the alternative voicings.
  *
  * The primary shape of every chord is already in the HTML (see
- * tools/build_mandolin_page.py -- it is pre-rendered so crawlers index it).
+ * tools/build_chord_pages.py -- it is pre-rendered so crawlers index it).
  * This file only handles interaction, and draws the 2nd-4th shapes on demand
  * from the JSON blob at the bottom of the page.
  *
@@ -20,7 +20,7 @@
     var BY_SYMBOL = {};
     DATA.chords.forEach(function (c) { BY_SYMBOL[c.symbol] = c; });
 
-    var STRINGS = ['G', 'D', 'A', 'E'];
+    var STRINGS = DATA.tuningNames;
     var VISIBLE = 5;
     var NS = 'http://www.w3.org/2000/svg';
 
@@ -32,8 +32,10 @@
     }
 
     function diagram(v) {
-        var w = 108, h = 136, left = 18, top = 26, spanW = 72, spanH = 86;
-        var dx = spanW / 3, dy = spanH / VISIBLE, start = v.startFret;
+        var n = STRINGS.length;
+        var dx = n === 4 ? 24 : 18, left = 18, top = 26, spanH = 86;
+        var spanW = dx * (n - 1), w = left * 2 + spanW, h = 136;
+        var dy = spanH / VISIBLE, start = v.startFret;
 
         var svg = el('svg', {
             'class': 'dia', viewBox: '0 0 ' + w + ' ' + h,
@@ -57,7 +59,7 @@
                 x2: left + spanW, y2: y.toFixed(1)
             }));
         }
-        for (var s = 0; s < 4; s++) {
+        for (var s = 0; s < n; s++) {
             var x = left + dx * s;
             svg.appendChild(el('line', {
                 'class': 'str', x1: x.toFixed(1), y1: top,
