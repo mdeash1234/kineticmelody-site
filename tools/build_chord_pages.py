@@ -351,6 +351,15 @@ def build(key):
 <link rel="stylesheet" href="../shared/chords.css?v=2">
 <script type="application/ld+json">%(appld)s</script>
 <script type="application/ld+json">%(faqld)s</script>
+<!-- Google tag (gtag.js). Analytics cookies stay off in the EEA, UK and Switzerland until consent is given. -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WLHM5K36QG"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {analytics_storage: 'denied', region: ['AT', 'BE', 'BG', 'HR', 'CY', 'CZ', 'DK', 'EE', 'FI', 'FR', 'DE', 'GR', 'HU', 'IS', 'IE', 'IT', 'LV', 'LI', 'LT', 'LU', 'MT', 'NL', 'NO', 'PL', 'PT', 'RO', 'SK', 'SI', 'ES', 'SE', 'GB', 'CH']});
+gtag('js', new Date());
+gtag('config', 'G-WLHM5K36QG');
+</script>
 </head>
 <body class="cf-page%(theme)s">
 
