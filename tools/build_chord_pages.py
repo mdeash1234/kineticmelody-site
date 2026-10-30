@@ -20,6 +20,11 @@ import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SITE = "https://kineticmelody.org"
+
+# Play passes the referrer= value to the installed app, so installs from the site show up
+# in Play Console and Firebase under source kineticmelody.org. Args: app id, campaign, content.
+PLAY_URL = ("https://play.google.com/store/apps/details?id=%s&amp;referrer=utm_source%%3Dkineticmelody.org"
+            "%%26utm_medium%%3Dweb%%26utm_campaign%%3D%s%%26utm_content%%3D%s")
 VISIBLE_FRETS = 5
 
 TOOLS_MENU = [
@@ -233,8 +238,7 @@ def build(key):
     data_path = ROOT / "data" / cfg["data"]
     out_path = ROOT / cfg["dir"] / "index.html"
     page_url = "%s/%s/" % (SITE, cfg["dir"])
-    play_url = ("https://play.google.com/store/apps/details?id=%s&utm_source=kineticmelody.org"
-                "&utm_medium=web&utm_campaign=%s" % (cfg["app_id"], cfg["campaign"]))
+    play_url = (PLAY_URL % (cfg["app_id"], cfg["campaign"], "primary"))
 
     data = json.loads(data_path.read_text(encoding="utf-8"))
     chords = data["chords"]
@@ -323,9 +327,8 @@ def build(key):
     }
 
     also_html = "".join(
-        '<li><a href="https://play.google.com/store/apps/details?id=%s&amp;utm_source=kineticmelody.org'
-        '&amp;utm_medium=web&amp;utm_campaign=%s" rel="noopener">%s</a> &mdash; %s</li>'
-        % (app_id, cfg["campaign"], label, blurb) for app_id, label, blurb in cfg["also"])
+        '<li><a href="%s" rel="noopener">%s</a> &mdash; %s</li>'
+        % (PLAY_URL % (app_id, cfg["campaign"], "also"), label, blurb) for app_id, label, blurb in cfg["also"])
 
     n_chords = len(chords)
     n_voicings = sum(len(c["voicings"]) for c in chords)
