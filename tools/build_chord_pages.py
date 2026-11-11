@@ -32,6 +32,8 @@ TOOLS_MENU = [
     ("mandolin", "/mandolin-chords/", "Mandolin Chord Finder"),
     (None, "/chords-for-a-key/", "Chords for a Key"),
     (None, "/circle-of-fifths/", "Circle of Fifths"),
+    (None, "/guitar-modes/", "Guitar Modes"),
+    (None, "/caged-shapes/", "CAGED Shapes"),
 ]
 
 INSTRUMENTS = {

@@ -83,3 +83,80 @@
 @media (max-width: 860px) {
     .cof-layout { grid-template-columns: 1fr; }
 }
+
+/* ---------- guitar neck and chord boxes (guitar modes, CAGED) ---------- */
+
+.neck-wrap { overflow-x: auto; background: #fff; border: 1px solid var(--gray-90); border-radius: 13px; padding: 0.7rem 0.6rem 0.2rem; margin-top: 0.8rem; }
+.neck { display: block; width: 100%; min-width: 640px; height: auto; user-select: none; -webkit-user-select: none; }
+.nk-fret { stroke: var(--gray-80); stroke-width: 1; }
+.nk-string { stroke: var(--gray-60); }
+.nk-nut { fill: var(--gray-30); }
+.nk-inlay { fill: var(--gray-90); }
+.nk-num, .nk-name, .nk-pos { fill: var(--gray-60); font-size: 11px; text-anchor: middle; }
+.nk-name { text-anchor: start; font-weight: 700; }
+.nk-pos { text-anchor: start; font-weight: 700; }
+.nk-mute { fill: var(--gray-50); font-size: 13px; text-anchor: middle; font-weight: 700; }
+.nk-open { fill: none; stroke: var(--gray-50); stroke-width: 1.4; }
+
+.nk-dot circle { stroke: rgba(0, 0, 0, 0.18); stroke-width: 1; }
+.nk-dot text { stroke: none; font-size: 10px; font-weight: 700; text-anchor: middle; pointer-events: none; fill: #fff; }
+.nk-dot.dim { opacity: 0.16; }
+.nk-ring { fill: none !important; stroke-width: 2.4 !important; }
+.nk-dot.note circle { fill: var(--purple-deep); }
+.nk-dot.root circle { fill: var(--chordseek-amber); stroke: #8a5200; stroke-width: 1.6; }
+.nk-dot.root text { fill: #2B1700; }
+.nk-dot.color circle { fill: #C2358F; }
+
+.s-C { fill: #C8453F; stroke: #C8453F; }
+.s-A { fill: #E0932A; stroke: #E0932A; }
+.s-G { fill: #2E8049; stroke: #2E8049; }
+.s-E { fill: #2F6BC4; stroke: #2F6BC4; }
+.s-D { fill: #6F4FD0; stroke: #6F4FD0; }
+.nk-dot.s-C circle, .nk-dot.s-G circle, .nk-dot.s-E circle, .nk-dot.s-D circle, .nk-dot.s-A circle { stroke: rgba(0, 0, 0, 0.2); }
+.nk-dot.s-A text { fill: #2B1700; }
+.nk-dot.is-root circle { stroke: var(--gray-10); stroke-width: 2.2; }
+.nk-ring.s-C { stroke: #C8453F; } .nk-ring.s-A { stroke: #E0932A; } .nk-ring.s-G { stroke: #2E8049; }
+.nk-ring.s-E { stroke: #2F6BC4; } .nk-ring.s-D { stroke: #6F4FD0; }
+.nk-pip.s-A { fill: #E0932A; }
+
+.legend { display: flex; flex-wrap: wrap; gap: 0.4rem 1.1rem; margin: 0.7rem 0 0; font-size: 0.85rem; color: var(--gray-40); }
+.legend span { display: inline-flex; align-items: center; gap: 0.4rem; }
+.legend i { display: inline-block; width: 13px; height: 13px; border-radius: 50%; }
+.legend .lg-root { background: var(--chordseek-amber); border: 1.5px solid #8a5200; }
+.legend .lg-color { background: #C2358F; }
+.legend .lg-note { background: var(--purple-deep); }
+
+/* ---------- guitar modes ---------- */
+
+.mode-card { margin-top: 1.4rem; background: #fff; border: 1px solid var(--gray-90); border-radius: 13px; padding: 1rem 1.2rem 1.1rem; }
+.mode-card h2 { font-size: 1.25rem; font-weight: 700; margin: 0 0 0.3rem; }
+.mode-card p { margin: 0 0 0.55rem; color: var(--gray-40); line-height: 1.65; }
+.mode-card p:last-child { margin-bottom: 0; }
+.mode-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 0.6rem; margin: 0.9rem 0 0.2rem; }
+.mode-fact { background: var(--gray-95); border-radius: 10px; padding: 0.55rem 0.8rem; }
+.mode-fact .k { display: block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; color: var(--gray-60); }
+.mode-fact .v { display: block; font-weight: 700; margin-top: 0.1rem; word-spacing: 0.15em; }
+
+/* ---------- CAGED ---------- */
+
+.shape-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.6rem; margin-top: 1.1rem; }
+.shape-card { background: #fff; border: 2px solid var(--gray-90); border-radius: 13px; padding: 0.5rem 0.35rem 0.6rem; text-align: center; cursor: pointer; font: inherit; color: inherit; }
+.shape-card:hover { border-color: var(--gray-60); }
+.shape-card.on { border-color: var(--gray-10); }
+.shape-card .sh { display: block; font-weight: 700; }
+.shape-card .sh b { display: inline-block; min-width: 1.7em; border-radius: 6px; padding: 0 0.3em; color: #fff; }
+.shape-card .sh b.s-A { color: #2B1700; }
+.shape-card .at { display: block; font-size: 0.78rem; color: var(--gray-50); margin-bottom: 0.2rem; }
+.shape-card svg { display: block; width: 100%; max-width: 120px; margin: 0 auto; height: auto; }
+.shape-card b.s-C { background: #C8453F; } .shape-card b.s-A { background: #E0932A; }
+.shape-card b.s-G { background: #2E8049; } .shape-card b.s-E { background: #2F6BC4; } .shape-card b.s-D { background: #6F4FD0; }
+
+@media (max-width: 720px) {
+    .shape-row { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 420px) {
+    .shape-row { grid-template-columns: repeat(2, 1fr); }
+}
+
+.swipe-hint { display: none; margin: 0.35rem 0 0; font-size: 0.8rem; color: var(--gray-60); }
+@media (max-width: 720px) { .swipe-hint { display: block; } }
